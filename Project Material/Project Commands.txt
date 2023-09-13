@@ -1,0 +1,68 @@
+1) @PostMapping("/consumer/registerdetails")
+
+
+{
+        
+        "firstName": "Ganesh",
+        "lastName": "Sapkale",
+        "gender": "Male",
+        "emailId": "ganesg223@gmail.com",
+        "phoneNumber": "8600667857",
+        "street": "Dam road",
+        "username": "GaneshS12",
+        "password": "Gan1234",
+        "address": {
+            "district": "karvir",
+            "town": "Kolhapur",
+            "pincode": "416222",
+            "state": "Maharashtra",
+            "country": "India"
+            
+        }
+    }
+
+2) @PostMapping("/seller/registerdetails")
+
+{
+        
+        "firstName": "Yogesh",
+        "lastName": "Sapkale",
+        "gender": "Male",
+        "age" : 24,
+        "emailId": "ganesg223@gmail.com",
+        "phoneNumber": "8600667857",
+        "street": "Dam road",
+        "username": "GaneshS12",
+        "password": "Gan1234",
+        "address": {
+            "district": "karvir",
+            "town": "Kolhapur",
+            "pincode": "416222",
+            "state": "Maharashtra",
+            "country": "India"
+            
+        }
+    }
+
+{
+    "sellerId": 6,
+    "firstName": "Yogesh",
+    "lastName": "Sapkale",
+    "gender": "Male",
+    "age": 24,
+    "emailId": "ganesg223@gmail.com",
+    "phoneNumber": "8600667857",
+    "street": "Dam road",
+    "username": "GaneshS12",
+    "password": "Gan1234",
+    "address": {
+        "district": "karvir",
+        "town": "Kolhapur",
+        "pincode": "416222",
+        "state": "Maharashtra",
+        "country": "India"
+        
+    }
+}
+
+

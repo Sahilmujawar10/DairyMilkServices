@@ -1,0 +1,144 @@
+                                            AnNotation Dairy Milk Services
+                                           ---------------------------------
+1)Dairy Project Entities-
+
+@springBootApplication - CORS stands for Cross-Origin Resource Sharing. 
+                         Annotation for permitting cross-origin requests on specific handler classes and/or
+                         handler methods. Processed if an appropriate HandlerMapping is configured.
+                         It allows you to make requests from one website to another website in the browser. It is a standard protocol that
+                        defines the interaction between a browser and a server for safely handling cross-origin HTTP requests.
+
+@Entity - An entity represents a table stored in a database.
+          Every instance of an entity represents a row in the table. Let's say we have a POJO called Student which
+          represents the data of a student and we would like to store it in the database .In order to do this, 
+           we should define an entity so that JPA is aware of it. Because various JPA implementations will try subclassing our entity
+           in order to provide their functionality, entity classes must not be declared final. We must specify this annotation at the class level
+
+@Table - specifies the name of the database table to be used for mapping.
+          If Class Name is same as Table Name, then this is optional
+@Component - allows Spring to automatically detect our custom beans. In other words, without having to write
+             any explicit code, Spring will: Scan our application for classes annotated with @Component.
+             Instantiate them and inject any specified dependencies into them
+@Id - annotation specifies the primary key of an entity
+
+@GeneratedValue -provides for the specification of generation strategies for the values of primary keys.
+                 The Generated Value annotation may be applied to a primary key property or field of an
+                 entity or mapped superclass in conjunction with the Id annotation.
+
+@NotEmpty - a constrained CharSequence, Collection, Map, or Array is valid as 
+            long as it's not null, and its size/length is greater than zero.
+
+@Length - As we previously mentioned, @Length is the Hibernate-specific version of @Size. We'll enforce the range for lastName using @Length:
+
+             @Entity
+            public class User {
+
+               // ...
+      
+            @Length(min = 3, max = 15)
+            private String lastName;
+
+             // ...
+
+              }
+
+
+@Pattern(regexp___) - Regular Expression is a search pattern for String. java.util.regex Classes for matching 
+                      character sequences against patterns specified by regular expressions in Java.
+
+@column - @Column annotation is used for Adding the column the name in the table of a particular MySQL database.
+          @Column is a JPA annotation and the length attribute is used by the schema generation tool to set the associated SQL column length.
+
+@Email -   Email annotations bring email messages in the Promotions tab to life with images, deals, expiration dates and more.
+ 
+@OneToOne - We've also added the @PrimaryKeyJoinColumn annotation, which indicates that the primary key of the User entity is used 
+             as the foreign key value for the associated Address entity.
+             We still have to define an @Id field in the Address class.
+
+@joinColumn - The @JoinColumn annotation helps us specify the column we'll use for joining an entity association or element collection
+
+@Lob -       The @Lob annotation specifies that the database should store the property as Large Object. 
+              The columnDefinition in the @Column annotation defines the column type for the property.
+
+@NotNull - a constrained CharSequence, Collection, Map, or Array is valid as long as it's not null, but it can be empty
+
+@Range -     @Range attribute for validating a particular field.
+
+@Override -   @Override annotation indicates that the child class method is over-writing its base class method. The @Override annotation can be useful for two reasons.
+               It extracts a warning from the compiler if the annotated method doesn't actually override anything.
+
+@ManyToMany - The @ManyToMany annotation is used in both classes to create the many-to-many relationship between the entities.
+               This association has two sides i.e. the owning side and the inverse side.
+@JoinTable -  @JoinTable annotation is used to specify the table name via the name attribute, 
+               as well as the Foreign Key column that references the post table (e.g., joinColumns ) and the Foreign Key 
+              column in the post_tag link table that references the Tag entity via the inverseJoinColumns attribute
+@JsonIgnore -  annotation is used at the class level to ignore fields during serialization and deserialization.
+               The properties that are declared in this annotation will not be mapped to the JSON content
+@Nullable -   annotations let you check nullability of a variable, parameter, or return value.
+
+---------------------------------------------------------------------------------------------------------
+ 2)Repository-
+
+@Repository - Indicates that an annotated class is a “Repository”. This annotation serves as a specialization of 
+              @Component and advisable to use with DAO classes.
+@Query -    The @Query annotation declares finder queries directly on repository methods.
+             While similar @NamedQuery is used on domain classes, Spring Data JPA @Query annotation is used on Repository interface.
+             This frees the domain classes from persistence specific information, which is a good thing
+@Modifying -  A modification is a change or alteration, usually to make something work better.
+               If you want to change something — in other words, modify it — you need to make a modification.
+               Lots of things require modification, because they get older or just because they can be improved.
+
+JpaRepository:-
+              The Java Persistence API (JPA) is the standard way of persisting Java objects into relational DBs.
+              JpaRepository provides JPA related methods such as flushing, persistence context, and deletes a record in a batch. 
+              It is defined in the package org.springframework.data.jpa.repository. 
+              JpaRepository extends both CrudRepository and PagingAndSortingRepository.
+
+CrudRepository:-
+              is a Spring Data interface for generic CRUD operations on a repository of a specific type
+
+PagingAndSortingRepository:-
+              is an extension of CrudRepository to provide additional methods to retrieve entities using the pagination and sorting abstraction.
+
+
+---------------------------------------------------------------------------------------------------------
+3)Servive -
+
+@Service - It tells the Spring that class contains the business logic.
+
+@Transactional -If this annotation is used on any method, spring does automate transaction management.
+                Internally it calls begin Transaction before method is called. // pre-processing
+                After the method it calls commit, if method is successful. // post-processing
+                After the method it calls rollback, if method throws any exception. // post-processing
+                Spring use AOP for implementing this.
+                If @Transactional is used on a class, it applies to each method in the class
+
+
+
+
+--------------------------------------------------------------------------------------------------------
+4)Main Controller
+
+@RestController -to create RESTful web services using Spring MVC ( Statelessness )
+                 ls a specialized version of the controller. It includes the @Controller + @ResponseBody annotations,
+                 and as a result, simplifies the controller implementation:
+                 @ResponseBody isn't required.
+                 Every request handling method of the controller class automatically serializes return objects into Http Response.
+
+@CrossOrigin - CORS stands for Cross-Origin Resource Sharing. 
+               Annotation for permitting cross-origin requests on specific handler classes and/or handler methods.
+               Processed if an appropriate HandlerMapping is configured.
+               It allows you to make requests from one website to another website in the browser.
+               It is a standard protocol that defines the interaction between a browser and a server for safely handling cross-origin HTTP requests.
+
+@Autowired - Spring @Autowired annotation is used for automatic injection of beans.
+              Spring @Qualifier annotation is used in conjunction with Autowired to avoid confusion
+              when we have two of more bean configured for same type.
+
+@PostMapping -It maps the HTTP POST requests on the specific handler method. It is used to create a web service endpoint that creates It is used instead of using
+               : @RequestMapping(method = RequestMethod.POST)
+
+@GetMapping -  It maps the HTTP GET requests on the specific handler method. It is used to create a web service endpoint that fetches. It is used instead of using
+                : @RequestMapping(method  = RequestMethod.GET)
+
+

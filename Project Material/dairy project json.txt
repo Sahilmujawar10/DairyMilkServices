@@ -1,0 +1,63 @@
+1. Consumer related all work is done and working properly.
+2. Seller part is done except product mapping (working on it....).
+3. Validation is done and working fine for all entities.
+4. Exception handling is done (whereever is needed), rest handel with if-else condition's wherever is usefull.
+5. URI's for login, register & fetching data is working fine with proper exception handling and validation.
+6. Records of seller and consumer both are maintaning in respective table after deletion of account. (Deleted history).
+7. Feedback & Queries working fine.
+8. Backend code except product mapping, all done and working fine (Checked each and every method from URI's).
+9. Starting to design front-end from tomorrow onwards !
+
+
+        access call kse krayche
+        component 
+     
+	 /consumer/registerdetails
+        
+      {
+        
+        "firstName": "Naem",
+        "lastName": "Shaikh",
+        "gender": "Male",
+        "emailId": "naem23@gmail.com",
+        "phoneNumber": "907557857",
+        "street": "shanivar wada road",
+        "username": "NaemS12",
+        "password": "Naem1234",
+        "address": {
+            "district": "satara",
+            "town": "pune",
+            "pincode": "416255",
+            "state": "Maharashtra",
+            "country": "India",
+          
+        }
+    }
+	
+	
+	
+	/seller/registerdetails
+        {
+        
+        "firstName": "Yogesh",
+        "lastName": "Sapkale",
+        "gender": "Male",
+        "age" : 24,
+        "emailId": "ganesg223@gmail.com",
+        "phoneNumber": "8600667857",
+        "street": "Dam road",
+        "username": "GaneshS12",
+        "password": "Gan1234",
+        "address": {
+            "district": "karvir",
+            "town": "Kolhapur",
+            "pincode": "416222",
+            "state": "Maharashtra",
+            "country": "India"
+            
+        }
+    }
+
+
+
+       /admin/products/addnewproduct
